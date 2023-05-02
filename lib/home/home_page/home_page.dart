@@ -40,14 +40,14 @@ class _HomePageState extends State<HomePage> {
   updateData() async {
     Map<String, String> list = await storage.readAll();
     devices = [];
-    double val = double.parse((Random().nextDouble() * 34).toStringAsFixed(2));
+    //double val = double.parse((Random().nextDouble() * 34).toStringAsFixed(2));
     for (var key in list.keys) {
       if (key.contains('device')) {
         final device = json.decode(list[key]!);
 
         devices.add(MeterReading(
-          price: device['price'] + val,
-          usedUnit: device['used_unit'] + val,
+          price: device['price'] + 0.14,
+          usedUnit: device['used_unit'] + 0.14,
           unit: device['unit'],
           name: device['name'] ?? 'Device',
           meterType: device['type'],
