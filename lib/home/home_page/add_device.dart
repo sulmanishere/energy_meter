@@ -104,6 +104,7 @@ class _AddDeviceState extends State<AddDevice> {
                             price: 1.1,
                             usedUnit: 5,
                             name: name!,
+                            unit: category == 'electric'? 'kWh' : 'M3',
                             meterType: category ?? 'electric',
                             deviceInfo: DeviceInfo(
                                 name: name!,
